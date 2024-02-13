@@ -8,7 +8,15 @@ import java.util.List;
 import java.util.Optional;
 
 public class MemberService {
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+
+    //ctrl + shift + t하면 자동으로 test클래스 생성
+    //private final MemberRepository memberRepository = new MemoryMemberRepository(); 이렇게 하면  test에서 다른 리퍼 사용
+
+    private final MemberRepository memberRepository;
+
+    public MemberService(MemberRepository memberRepository){ //생성자
+        this.memberRepository = memberRepository;
+    }
 
 
     //회원가입
